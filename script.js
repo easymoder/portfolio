@@ -87,10 +87,8 @@ $(document).on("click", "#blockbusterButton", function(){
 });
 
 $(document).on("submit", "#contactForm", function(){
-	$.post("mail.php", function(){
+	$.post("mail.php", {name: $("#name").val(), email: $("#email").val(), message:$("#message").val()}, function(){
 		console.log("sent");
-	}).fail(function(){
-		console.log("fail");
 	});
 	return false;
 });
