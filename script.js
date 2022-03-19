@@ -16,7 +16,7 @@ let about = `<div id="h2line"></div><h2>About Me</h2><div id="content"><p>I'm fi
 
 let resume = `<div id="h2line"></div><h2>Resume</h2><div id="content"><img id="resume" src="media/resume.png"/></div>`;
 
-let contact = `<div id="h2line"></div><h2>Contact Me</h2><div id="content"><p>Thank you for your interest in my work. To contact me, please fill in the form below.</p><form method="POST" action="mail.php" id="contactForm"><label for="name">Name <span class="red">*</span></label><input type="text" name="name" id="name" required="required" placeholder="Firstname Lastname" class="input"><label for="email">Email address <span class="red">*</span></label><input type="email" name="email" id="email" required="required" placeholder="you@domain.com" class="input"><label>Message</label><textarea name="message" id="message" rows="12" cols="60" class="input"></textarea><input type="submit" id="mySubmit" name="submit" value="Submit" class="input"></form></div>`;
+let contact = `<div id="h2line"></div><h2>Contact Me</h2><div id="content"><p>Thank you for your interest in my work. To contact me, please fill in the form below.</p><form id="contactForm"><label for="name">Name <span class="red">*</span></label><input type="text" name="name" id="name" required="required" placeholder="Firstname Lastname" class="input"/><label for="email">Email address <span class="red">*</span></label><input type="email" name="email" id="email" required="required" placeholder="you@domain.com" class="input"/><label>Message</label><textarea name="message" id="message" rows="12" cols="60" class="input"></textarea><input type="submit" id="mySubmit" name="submit" value="Submit" class="input"/></form></div>`;
 
 function loadMain(html){
 	$("main").fadeOut(function(){
@@ -84,4 +84,13 @@ $(document).on("click", "#netflixButton", function(){
 });
 $(document).on("click", "#blockbusterButton", function(){
 	update(blockbusterData);
+});
+
+$(document).on("submit", "#contactForm", function(){
+	$.post("mail.php", function(){
+		console.log("sent");
+	}).fail(function(){
+		console.log("fail");
+	});
+	return false;
 });
