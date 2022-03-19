@@ -7,7 +7,6 @@
 	vertical-align:baseline;
 	background:transparent;
 	box-sizing:border-box;
-	cursor:default;
 }
 
 body{
@@ -261,6 +260,44 @@ text{
 .unity-mobile #unity-canvas{
 	width:80vw!important;
 }
+
+#resume{
+	border:1px solid #000000;
+}
+
+.red{
+	color:#ec0707;
+}
+
+label{
+	display:block;
+}
+
+input, textarea{
+	font-family: proxima-nova-condensed, sans-serif;
+	text-transform:none;
+	border:1px solid #000000;
+	padding:5px 10px;
+	margin-bottom:15px;
+	border-radius:3px;
+}
+
+textarea{
+	width:100%;
+}
+
+input[type="text"], input[type="email"]{
+	width:300px;
+}
+
+input[type="submit"]{
+	border:1px solid black;
+	cursor:pointer;
+	padding:10px 20px;
+	margin-top:15px;
+}
+
+
 
 
 @media screen and (max-width: 810px) {

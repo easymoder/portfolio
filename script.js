@@ -14,6 +14,10 @@ let editing = `<div id="h2line"></div><h2>Compositing / Editing</h2><div id="con
 
 let about = `<div id="h2line"></div><h2>About Me</h2><div id="content"><p>I'm first and foremost a beginner. Having recently graduated, I'm still at the start of a lifelong career of learning.</p><p>As a designer, I'm straightforward. My passion is taking raw information and presenting it in easy-to-understand, easy-to-use visual interfaces. I believe in user-centric design with no frills, and I'm always learning better ways to implement it.</p><p>I'm also straightforward as a person. My functionality-first attitude extends to both conversational candor and overall stable sensibilities. There's rarely need for me to rock the boat &#8212; if it works, it works. I enjoy familiar standard operating procedures.</p><p>Web-based technology has become increasingly interesting to me as a material to work with, so I'm considering a master's in web and mobile applications development. I would love to study full-stack development to further my ability to create informatic solutions.</p><p>This website was written from scratch. Plain by design, I wanted it to act only as a vehicle for my work rather than a piece of work itself. All the projects dealing with brands are fictional, done in an academic setting.</p></div>`;
 
+let resume = `<div id="h2line"></div><h2>Resume</h2><div id="content"><img id="resume" src="media/resume.png"/></div>`;
+
+let contact = `<div id="h2line"></div><h2>Contact Me</h2><div id="content"><p>Thank you for your interest in my work. To contact me, please fill in the form below.</p><form method="POST" action="mail.php" id="contactForm"><label for="name">Name <span class="red">*</span></label><input type="text" name="name" id="name" required="required" placeholder="Firstname Lastname" class="input"><label for="email">Email address <span class="red">*</span></label><input type="email" name="email" id="email" required="required" placeholder="you@domain.com" class="input"><label>Message</label><textarea name="message" id="message" rows="12" cols="60" class="input"></textarea><input type="submit" id="mySubmit" name="submit" value="Submit" class="input"></form></div>`;
+
 function loadMain(html){
 	$("main").fadeOut(function(){
 		$("main").html(html);
@@ -41,6 +45,16 @@ $(document).on("click", "#aboutLink", function(){
 	$(".activePage").removeClass("activePage");
 	$(this).find("a").addClass("activePage");
 	loadMain(about);
+});
+$(document).on("click", "#resumeLink", function(){
+	$(".activePage").removeClass("activePage");
+	$(this).find("a").addClass("activePage");
+	loadMain(resume);
+});
+$(document).on("click", "#contactLink", function(){
+	$(".activePage").removeClass("activePage");
+	$(this).find("a").addClass("activePage");
+	loadMain(contact);
 });
 
 $(document).on("click", "#print", function(){
