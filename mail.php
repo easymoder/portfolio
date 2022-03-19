@@ -7,9 +7,8 @@ $message = $_POST['message'];
 
 
 $to = $myemail; 
-$email_subject = "Form submission from: $name";
-$email_body = "You received a new message. ".
-"Here are the details:\n Name: $name \n Email: $email_address \n Message: \n $message"; 
+$email_subject = "form submission from $name";
+$email_body = " u got a new message. \n name: $name \n email: $email_address \n message: \n $message"; 
 
 $headers = "From: $myemail\n"; 
 $headers .= "Reply-To: $email_address";
