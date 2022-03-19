@@ -89,9 +89,10 @@ $(document).on("click", "#blockbusterButton", function(){
 $(document).on("submit", "#contactForm", function(){
 	$.post("mail.php", {name: $("#name").val(), email: $("#email").val(), message:$("#message").val()}, function(){
 		$("#content").append(`<p class="hidden">Your message has been sent. I will be in touch shortly.</p>`);
-		$("#contactForm").fadeOut(function(){
+		$("#content").children().not(".hidden").fadeOut(function(){
 			$(".hidden").fadeIn();
 		});
+		
 	});
 	return false;
 });
